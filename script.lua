@@ -14,7 +14,7 @@ local result = get("result")
 
 coroutine.wrap(function()
     local res = fetch({
-        url = "http://10.69.69.69:4992/tlds",
+        url = "http://buss-api.psr.tf/tlds",
         method = "GET",
         headers = { ["Content-Type"] = "application/json" },
     })
@@ -37,7 +37,7 @@ function fetch_dns()
 
     print(body)
     local res = fetch({
-        url = "http://10.69.69.69:4992/domain",
+        url = "http://buss-api.psr.tf/domain",
         method = "POST",
         headers = { ["Content-Type"] = "application/json" },
         body = body,
@@ -64,7 +64,7 @@ update_done.on_click(function()
         .. "}"
 
     local res = fetch({
-        url = "http://10.69.69.69:4992/domain/" .. update_key.get_content(),
+        url = "http://buss-api.psr.tf/domain/" .. update_key.get_content(),
         method = "PUT",
         headers = { ["Content-Type"] = "application/json" },
         body = body,
@@ -93,7 +93,7 @@ end)
 
 delete_done.on_click(function()
     local res = fetch({
-        url = "http://10.69.69.69:4992/domain/" .. delete_key.get_content(),
+        url = "http://buss-api.psr.tf/domain/" .. delete_key.get_content(),
         method = "DELETE",
         headers = { ["Content-Type"] = "application/json" },
     })
